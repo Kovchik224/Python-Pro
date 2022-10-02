@@ -1,0 +1,15 @@
+import pyautogui
+import time
+pyautogui.moveTo(610,1080)
+time.sleep(0.1)
+pyautogui.click()
+time.sleep(1)
+pyautogui.write('                             \n\n\n\n                                /\\                          /\\\n                               /  \\                        /  \\\n                              /    \\                      /    \\                            \n \n\n\n                                         \\           /\n                                          \\_________/')
+time.sleep(3)
+pyautogui.hotkey('ctrl','a')
+time.sleep(1)
+pyautogui.press('backspace')
+time.sleep(1)
+pyautogui.write('                             \n\n\n\n                                /\\                          /\\\n                               /  \\                        /  \\\n                              /    \\                      /    \\                            \n \n\n\n                                         \\           /\n                                          \\_________/\n                                               hi')
+time.sleep(1)
+pyautogui.write(',im your friend')
