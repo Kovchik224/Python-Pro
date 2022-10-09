@@ -1,0 +1,25 @@
+import pyautogui
+import time
+command = input("Команда: ")
+if (command == "поиск"):
+    a = input("запрос: ")
+    pyautogui.moveTo(200,1080)
+    time.sleep(0.1)
+    pyautogui.click()
+    time.sleep(5)
+    pyautogui.write(a)
+    pyautogui.press('enter')
+elif (command == "выход"):
+    pyautogui.moveTo(1750,0)
+    time.sleep(0.1)
+    pyautogui.click()
+elif (command == "текст"):
+    pyautogui.moveTo(400,1080)
+    time.sleep(0.1)
+    pyautogui.click()
+elif (command == "рисунок"):
+    pyautogui.moveTo(350,1080)
+    time.sleep(0.1)
+    pyautogui.click()
+else:
+    print("неизвестная команда")
