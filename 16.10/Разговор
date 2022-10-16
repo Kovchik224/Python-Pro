@@ -1,0 +1,33 @@
+import keyboard
+
+while True:
+    if keyboard.is_pressed('space') == True:
+            print('Привет')
+            otvet = int(input())
+            if otvet == 1:
+             print('  Вы:  Привет')
+        
+            if otvet == 2:
+             print('Вы: Здравствуйте')
+        
+            if otvet == 3:
+             print('Вы: Что надо?')
+        
+            if otvet == 4:
+             print('Вы: Вы кто такой?')
+        
+            if otvet == 5:
+             print('Вы: Пока')
+        
+            if otvet == 6:
+             print('Не Вы: Привет')
+        
+            if otvet == 7:
+             print('*Вы промолчали')
+        
+            if otvet == 8:
+             print('*Что то Вам подсказывает что не надо отвечать')
+    
+            if otvet == 9:
+             print('BRUH')
+            break
