@@ -1,0 +1,18 @@
+import pyautogui
+
+pervoe = int(pyautogui.prompt(text = '', title = '', default = ''))
+deystvie = pyautogui.prompt(text = '', title = '', default = '')
+vtoroe = int(pyautogui.prompt(text = '', title = '', default = ''))
+
+if deystvie == '+':
+    pyautogui.alert(text = pervoe + vtoroe, title = '', button = 'OK')
+if deystvie == '-':
+    pyautogui.alert(text = pervoe - vtoroe, title = '', button = 'OK')
+if deystvie == '/':
+    pyautogui.alert(text = pervoe / vtoroe, title = '', button = 'OK')
+if deystvie == '*':
+    pyautogui.alert(text = pervoe * vtoroe, title = '', button = 'OK')
+if deystvie == '//':
+    pyautogui.alert(text = pervoe // vtoroe, title = '', button = 'OK')
+if deystvie == '%':
+    pyautogui.alert(text = pervoe % vtoroe, title = '', button = 'OK')
