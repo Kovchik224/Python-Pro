@@ -1,0 +1,33 @@
+import keyboard as k
+import time as t
+import pyautogui as py
+
+
+py.hotkey('win','r')
+t.sleep(0.5)
+py.write('https://money-clicker.github.io/index.html')
+t.sleep(1)
+py.press('enter')
+t.sleep(1)
+py.press('enter')
+t.sleep(0.1)
+#clicker
+while True:
+    while (not (k.is_pressed('ctrl'))):
+        py.moveTo(326,267)
+        py.click()
+        t.sleep(0.1)
+    lvlprompt = py.prompt(text = 'На сколько увеличить уровень?', title = 'Python Auto GUI', default='5')
+    py.moveTo(368,573)
+    py.click()
+    t.sleep(0.1)
+    py.write(lvlprompt)
+    t.sleep(1)
+    py.press('enter')
+
+        
+    while (not(k.is_pressed('alt'))):
+        t.sleep(0.1)
+
+        
+        
