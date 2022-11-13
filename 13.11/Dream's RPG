@@ -1,0 +1,9 @@
+import time
+import keyboard
+
+herohp = 10
+badmanhp = 10
+herodamage = 7
+
+print('На Вас напал ВРАГ!!!')
+print('YOU              BADMAN\nHP', herohp, '           HP', badmanhp, '\nDAMAGE', herodamage, '        DAMAGE', '0-3')
