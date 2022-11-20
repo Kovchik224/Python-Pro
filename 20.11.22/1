@@ -1,0 +1,8 @@
+
+a = 0
+n = int(input('СКОЛЬКО ЧИСЕЛ ВВЕСТИ? '))
+for step in range(n):
+    
+    abra = int(input('Какое число? '))
+    a = a + abra
+print(a)
