@@ -1,0 +1,48 @@
+import time
+import keyboard
+import random
+import pyautogui
+
+herohp = 20
+enemyhp = 100
+herodamage = 7
+maxdamage = 3
+killsenemy = 0
+enemydamage = random.randrange(0,maxdamage)
+
+#Выбор Класса
+pyautogui.prompt(text ==)
+
+while herohp > 0:
+    time.sleep(3)
+    print('На Вас напал ВРАГ!!!')
+    print('\nYOU              ENEMY\nHP', herohp, '           HP', enemyhp, '\nDAMAGE', herodamage, '        DAMAGE', 'Рандом', '\nУбито', killsenemy)
+
+    time.sleep(1)
+    print('\nВы УДАРИЛИ')
+    time.sleep(0.1)
+    print('-', herodamage, 'врага')
+    enemyhp = enemyhp - herodamage
+
+    time.sleep(1)
+    print('\nВраг НАПАДАЕТ')
+    time.sleep(0.1)
+    enemydamage = random.randrange(0,maxdamage)
+    print('-', enemydamage)
+    herohp = herohp - enemydamage
+    print('\nYOU              ENEMY\nHP', herohp, '           HP', enemyhp, '\nDAMAGE', herodamage, '        DAMAGE', 'Рандом')
+
+    if enemyhp <= 0:
+        print('\nВы УБИЛИ врага\n+3 урона ')
+        herodamage = herodamage + 3
+        enemydamage = random.randrange(0,maxdamage+1)
+        enemyhp = 100
+        herohp = 105
+        killsenemy = killsenemy + 1
+        time.sleep(3)
+
+    if herohp <= 0:
+        print('Вы ПРОИГРАЛИ') 
+        exit()
+
+
