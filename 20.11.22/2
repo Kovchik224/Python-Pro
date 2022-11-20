@@ -1,0 +1,5 @@
+n = int(input())
+a = 0
+for step in range(0,n+1):
+    a = a + step
+    print(step, a)
