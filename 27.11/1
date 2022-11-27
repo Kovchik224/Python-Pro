@@ -1,0 +1,13 @@
+import pyautogui
+import time
+
+n = int(input())
+pyautogui.hotkey('win','r')
+time.sleep(0.5)
+pyautogui.write('chrome')
+time.sleep(0.5)
+pyautogui.press('enter')
+time.sleep(1)
+for s in range(n):
+    pyautogui.hotkey('ctrl','t')
+    time.sleep(0.1)
