@@ -1,0 +1,11 @@
+import pyautogui
+pf = 0
+nf = 1
+sf = 1
+n = int(input())
+for i in range (n):
+    sf = pf + nf
+    pf = nf
+    nf = sf
+    if sf < n:
+        print(pf + nf)
