@@ -1,0 +1,13 @@
+prov = 0
+summa = 0
+for i in range(5):
+    n = int(input())
+    if n > prov:
+        prov = n
+    if n % 2 == 0:
+        summa = summa + n
+    ras = prov - summa
+if summa == 0:
+    print('NO')
+else:
+    print(ras)
