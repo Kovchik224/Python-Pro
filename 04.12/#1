@@ -1,0 +1,14 @@
+count = 0
+summa = 0
+
+for i in range(4):
+    n = int(input())
+    if n > 0:
+        count = count + 1
+        summa = summa + n
+
+if summa <= 0:
+    print('NO')
+else:
+    print(count)
+    print(summa)
