@@ -1,0 +1,37 @@
+import time
+import keyboard
+money = 100
+moneyc = 0
+gryadok = 1
+wheat = 0
+allwheat = 0
+while True:
+    if keyboard.is_pressed('e'):
+        for i in range(1,gryadok+1):
+            wheat+=10
+        time.sleep(0.1)
+        print('Вы собрали:')
+        if wheat > 0:
+            allwheat+=wheat
+            print(wheat, 'пшеницы (Всего:', allwheat,')')
+            wheat = 0
+    if keyboard.is_pressed('c'):
+        for j in range(1,allwheat+1):
+            money+=1
+            moneyc+=1
+        time.sleep(0.1)
+        print('Вы продали всю пшеницу за',moneyc)
+    if keyboard.is_pressed('b'):
+        time.sleep(0.1)
+        print('Ваш баланс:',money)
+    if keyboard.is_pressed('w'):
+        if money >= 1000:
+            time.sleep(0.1)
+            print('Вы купили новую грядку за 1000')
+            gryadok+=1
+            money-=1000
+        if money < 1000:
+            time.sleep(0.1)
+            print('Вам не хватает денег:(')
+            
+        
