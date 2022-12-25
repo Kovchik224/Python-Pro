@@ -1,0 +1,41 @@
+m  = input('Страна: ')
+
+if m == 'Россия':
+    print('Дед Мороз')
+    print('С Новым Годом!')
+    
+if m == 'Италия':
+    print('Babbo Natale')
+    print('Buon Anno!')
+    
+if m == 'Финляндия':
+    print('Joulupukki')
+    print('Hyvää Uutta Vuotta!')
+    
+if m == 'Норвегия':
+    print('Julenissen')
+    print('Godt Nytt År!')
+    
+if m == 'Великобритания':
+    print('Father Christmas')
+    print('Happy New Year!')
+    
+if m == 'Албания':
+    print('Atë Krishtlindje')
+    print('Gëzuar Vitin E Ri!')
+    
+if m == 'Греция':
+    print('Ο Πατέρας Των Χριστουγέννων')
+    print('Ευτυχισμένο Το Νέο Έτος!')
+    
+if m == 'Татарстан':
+    print('Кыш Бабай')
+    print('Яңа ел белән!')
+    
+if m == 'Франция':
+    print('Père Noël')
+    print('Bonne année!')
+    
+if m == 'Япония':
+    print('父のクリスマス')
+    print('新年おめでとうございます。!')
