@@ -1,0 +1,48 @@
+work = ["убраться в комнате","приготовить еду"]
+walya = 0
+while walya == 0:
+    a = input("Что сделать? ")
+    if a == "добавь":
+        delo = input('Что добавим? ')
+        work.append(delo)
+        print('Добавлено дело "', delo, '"', ', список: ', work )
+    
+    if a == "Удали по индексу":
+        delo = int(input('Какой индекс? '))
+        print('Удаленно по индексу ', delo, 'дело "', work[delo], '"')
+        work.pop(delo)
+        print('Список:', work)
+        
+    if a == "Удали по названию":
+        delo = input('Какое дело удалить? ')
+        work.remove(delo)
+        print('Удаленно дело "', delo, '"', 'список: ', work)
+        
+    if a == "Покажи список":
+        print("Список: ", work)
+        
+    if a == "Покажи дело":
+        delo = int(input('Какой индекс? '))
+        print('Дело', delo, ':', work[delo])
+        
+    if a == "Выйди":
+        walya = 1
+        print('Пока:(')
+        
+    if a == "Заредактируй по ин":
+        delo = int(input('Какой индекс? '))
+        delo2 = input('Новый текст:')
+        work[delo] = delo2
+        print('Список:', work)
+        
+    if a == "Заредактируй по названию":
+        delo = (input('Какое название? '))
+        if delo in work:
+            for step in range(len(work)):
+                if delo == work[step]:
+                    delo2 = input('Новый текст: ')
+                    work[step] = delo2
+        else:
+            print('Такого названия нету')
+        print('Список:', work)
+        
