@@ -1,0 +1,18 @@
+pr = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2]
+a = []
+chislo = 0
+x = pr[1] - pr[0]
+y = pr[3] - pr[4]
+for i in range(15):
+    a.append(chislo)
+    chislo+=x
+    a.append(chislo)
+    chislo+=x
+    a.append(chislo)
+    chislo+=x
+    a.append(chislo)
+    chislo-=y
+print(a)
+print(len(a))
+    
+
