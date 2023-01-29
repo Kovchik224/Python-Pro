@@ -1,0 +1,11 @@
+j = 0
+n = int(input())
+a = []
+cht = []
+for i in range(n):
+    a.append(int(input()))
+for o in range (len(a)):
+    if o % 2 == 0 and o > 0:
+        j = j + a[o]
+        
+print(j)
