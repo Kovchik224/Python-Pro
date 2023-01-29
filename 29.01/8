@@ -1,0 +1,13 @@
+n = int(input())
+a = []
+m = 0
+
+for i in range(n):
+    a.append(int(input()))
+for q in range(len(a)):
+        if (q % 2 == 0 and a[q] % 2 == 0) or (q % 2 != 0 and a[q] % 2 != 0):
+            m = m + a[q]
+print(m)
+
+
+
