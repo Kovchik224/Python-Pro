@@ -1,0 +1,13 @@
+j = 0
+m = 1
+n = int(input())
+a = []
+cht = []
+for i in range(n):
+    a.append(int(input()))
+for o in a:
+    if o != 0:
+        m = m * o
+    
+print(m)
+
