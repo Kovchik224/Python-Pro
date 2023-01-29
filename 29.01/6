@@ -1,0 +1,11 @@
+n = int(input())
+a = []
+m = 0
+
+for i in range(n):
+    a.append(int(input()))
+for o in (a):
+    if o % 3 != 0:
+       m = m + 1
+print(m)
+
