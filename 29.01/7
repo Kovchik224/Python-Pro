@@ -1,0 +1,12 @@
+n = int(input())
+a = []
+m = 0
+
+for i in range(n):
+    a.append(int(input()))
+for q in range(len(a)):
+        if q < a[q]:
+            m = m + 1
+print(m)
+
+
