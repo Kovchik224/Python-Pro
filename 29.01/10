@@ -1,0 +1,9 @@
+a = []
+i = 0
+while len(a) < 20:
+    i = i + 1
+    if i % 2 != 0 and i % 3 != 0:
+        a.append(i)
+        
+print(a)
+print(len(a))
