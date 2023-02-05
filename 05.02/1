@@ -1,0 +1,16 @@
+i = 0
+chislo = 0
+fp = 0
+i = 0
+n = int(input())
+a = []
+for i in range(n):
+    a.append(int(input()))
+    
+while a[i] != 'cho':
+    if a[chislo] == abs(a[chislo]) and len(a) >= chislo :
+        fp = a[chislo]
+        break
+    chislo+=1
+
+print(fp)
