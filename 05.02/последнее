@@ -1,0 +1,32 @@
+n = int(input())
+a = []
+for i in range(n):
+    a.append(int(input()))
+maxutko99 = a[0]
+minutko99 = a[0]
+index = 0
+indexa = 0
+glass = 0
+for d in (a):
+    if maxutko99  < d:
+        maxutko99 = d
+    
+for d in (a):
+    if minutko99  > d:
+        minutko99 = d
+        
+for i in range (len(a)):
+    if a[i] == maxutko99:
+        abemamax=index
+    index+=1
+
+for i in range (len(a)):
+    if a[i] == minutko99:
+        abemamin=indexa
+    indexa+=1
+print(a)
+glasses = a[abemamin]
+a[abemamin] = a[abemamax]
+a[abemamax] = glasses
+
+print(a)
