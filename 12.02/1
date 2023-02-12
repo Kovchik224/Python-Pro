@@ -1,0 +1,37 @@
+hody = 0
+m = [['-','-','-'],['-','-','-'],['-','-','-']]
+for i in range(len(m)):
+    for j in range(len(m[i])):
+        print(m[i][j], end=' ')
+    print()
+
+while hody != 9:
+ p1a = int(input('Какой ряд? '))
+ p1b = int(input('Какой столбец? '))
+ p1a-=1
+ p1b-=1
+
+ m[p1a][p1b] = 'X'
+ hody+=1
+ for i in range(len(m)):
+    for j in range(len(m[i])):
+        print(m[i][j], end=' ')
+    print()
+ if hody == 9:
+     print('Конец')
+     break
+ p2a = int(input('Какой ряд? '))
+ p2b = int(input('Какой столбец? '))
+ p2a-=1
+ p2b-=1
+ m[p2a][p2b] = 'O'
+ hody+=1
+ for i in range(len(m)):
+    for j in range(len(m[i])):
+        print(m[i][j], end=' ')
+    print()
+ if hody == 9:
+     print('Конец')
+     break
+
+    
