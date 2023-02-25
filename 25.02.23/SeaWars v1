@@ -1,0 +1,715 @@
+import random
+
+m = [['o','o','o','o','*','*','*','*','*','o'],
+     ['*','*','*','*','*','*','*','o','*','o'],
+     ['*','*','*','*','*','*','*','o','*','*'],
+     ['*','*','o','*','*','*','*','o','*','*'],
+     ['*','*','*','*','*','*','*','*','*','*'],
+     ['o','*','*','*','*','o','*','*','o','*'],
+     ['o','*','*','*','*','*','*','*','*','*'],
+     ['*','*','*','o','o','*','*','*','*','*'],
+     ['*','*','*','*','*','*','o','o','o','*'],
+     ['o','*','*','*','*','*','*','*','*','*']]
+
+m2 = [['o','o','*','*','*','*','*','*','*','*'],
+      ['*','*','*','o','*','*','*','o','o','*'],
+      ['o','*','*','*','*','*','*','*','*','*'],
+      ['*','*','*','*','o','o','o','*','*','*'],
+      ['*','o','*','*','*','*','*','*','o','*'],
+      ['*','o','*','*','*','*','*','*','*','*'],
+      ['*','o','*','o','*','*','*','*','*','*'],
+      ['*','o','*','o','*','*','*','*','*','*'],
+      ['*','*','*','*','*','*','o','*','*','*'],
+      ['*','o','o','o','*','*','*','*','*','*']]
+
+hod = int(input('Какой Режим?[0] - PVP [2] - AVP '))
+punch = 0
+punchb = 0
+win = 0
+while win == 0:
+    if hod == 0:
+        print('ХОД ИГРОКА 1')
+        for i in range(len(m2)):
+            for j in range(len(m2[i])):
+                print(m2[i][j], end=' ')
+            print()
+        punchb = int(input('Какая точка(ряд)?'))
+        punch = int(input('Какая точка(столбик)?'))
+        punch-=1
+        punchb-=1
+        if m[punchb][punch] == 'o':
+            if punchb == 0 and punch == 0:
+                if m[0][1] == 'o' or m[0][2] == 'o' or m[0][3] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[0][1] == 'x' and m[0][2] == 'x' and m[0][3] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+            if punchb == 0 and punch == 1:
+                if m[0][0] == 'o' or m[0][2] == 'o' or m[0][3] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[0][0] == 'x' and m[0][2] == 'x' and m[0][3] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+            if punchb == 0 and punch == 2:
+                if m[0][0] == 'o' or m[0][1] == 'o' or m[0][3] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[0][0] == 'x' and m[0][1] == 'x' and m[0][3] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+            if punchb == 0 and punch == 3:
+                if m[0][0] == 'o' or m[0][2] == 'o' or m[0][1] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[0][0] == 'x' and m[0][2] == 'x' and m[0][1] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+            if punchb == 1 and punch == 7:
+                if m[2][7] == 'o' or m[3][7] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[2][7] == 'x' and m[3][7] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+            if punchb == 2 and punch == 7:
+                if m[1][7] == 'o' or m[3][7] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[1][7] == 'x' and m[3][7] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+            if punchb == 3 and punch == 7:
+                if m[2][7] == 'o' or m[1][7] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[2][7] == 'x' and m[1][7] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+            if punchb == 3 and punch == 2:
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                    hod = 0
+            if punchb == 5 and punch == 5:
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                    hod = 0
+            
+            if punchb == 5 and punch == 8:
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                    hod = 0
+            
+            if punchb == 9 and punch == 0:
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                    hod = 0
+                    
+            if punchb == 8 and punch == 6:
+                if m[8][7] == 'o' or m[8][8] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[8][7] == 'x' and m[8][8] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+                    
+            if punchb == 8 and punch == 7:
+                if m[8][6] == 'o' or m[8][8] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[8][6] == 'x' and m[8][8] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+                    
+            if punchb == 8 and punch == 8:
+                if m[8][7] == 'o' or m[8][6] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[8][7] == 'x' and m[8][6] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+                    
+            if punchb == 0 and punch == 9:
+                if m[1][9] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[1][9] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+                
+            if punchb == 1 and punch == 9:
+                if m[0][9] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[0][9] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+                    
+            if punchb == 5 and punch == 0:
+                if m[6][0] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[6][0] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+                    
+            if punchb == 6 and punch == 0:
+                if m[5][0] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[5][0] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+                    
+            if punchb == 7 and punch == 3:
+                if m[7][4] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[7][4] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+               
+            if punchb == 7 and punch == 4:
+                if m[7][3] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[7][3] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 0
+                
+        if m[punchb][punch] == '*':
+            print('ПРОМАЗАЛ!')
+            hod = 1
+
+    if hod == 1:
+        print('ХОД ИГРОКА 1')
+        for i in range(len(m)):
+            for j in range(len(m[i])):
+                print(m[i][j], end=' ')
+            print()
+        punchb = int(input('Какая точка(ряд)?'))
+        punch = int(input('Какая точка(столбик)?'))
+        punch-=1
+        punchb-=1
+        if m2[punchb][punch] == 'o':
+            if punchb == 0 and punch == 0:
+                if m2[0][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[0][1] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+            if punchb == 0 and punch == 1:
+                if m2[0][0] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[0][0] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+            if punchb == 1 and punch == 3:
+                print('УБИТ!')
+                m2[punchb][punch] = 'x'
+                hod = 1
+            if punchb == 0 and punch == 3:
+                print('УБИТ!')
+                m2[punchb][punch] = 'x'
+                hod = 1
+            if punchb == 4 and punch == 8:
+                print('УБИТ!')
+                m2[punchb][punch] = 'x'
+                hod = 1
+            if punchb == 8 and punch == 6:
+                print('УБИТ!')
+                m2[punchb][punch] = 'x'
+                hod = 1
+            if punchb == 1 and punch == 7:
+                if m2[1][8] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[1][8] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                                
+            if punchb == 1 and punch == 8:
+                if m2[1][7] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[1][8] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                    
+            if punchb == 6 and punch == 3:
+                if m2[7][3] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[7][3] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                    
+            if punchb == 7 and punch3 == 3:
+                if m2[6][3] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[6][3] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                    
+            if punchb == 4 and punch == 1:
+                if m2[5][1] == 'o' or m2[6][1] == 'o' or m2[7][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[5][1] == 'o' or m2[6][1] == 'o' or m2[7][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                
+            if punchb == 5 and punch == 1:
+                if m2[4][1] == 'o' or m2[6][1] == 'o' or m2[7][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[4][1] == 'o' or m2[6][1] == 'o' or m2[7][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                    
+            if punchb == 6 and punch == 1:
+                if m2[5][1] == 'o' or m2[4][1] == 'o' or m2[7][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[5][1] == 'o' or m2[4][1] == 'o' or m2[7][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                    
+            if punchb == 7 and punch == 1:
+                if m2[5][1] == 'o' or m2[6][1] == 'o' or m2[4][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[5][1] == 'o' or m2[6][1] == 'o' or m2[4][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                    
+            if punchb == 9 and punch == 2:
+                if m2[9][3] == 'o' or m2[9][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[9][3] == 'o' or m2[9][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                    
+            if punchb == 9 and punch == 3:
+                if m2[9][2] == 'o' or m2[9][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[9][2] == 'o' or m2[9][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                
+            if punchb == 9 and punch == 1:
+                if m2[9][3] == 'o' or m2[9][2] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[9][3] == 'o' or m2[9][2] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                
+            if punchb == 3 and punch == 4:
+                if m2[3][5] == 'o' or m2[3][6] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[3][5] == 'o' or m2[3][6] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                
+            if punchb == 3 and punch == 5:
+                if m2[3][4] == 'o' or m2[3][6] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[3][4] == 'o' or m2[3][6] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                
+            if punchb == 3 and punch == 6:
+                if m2[3][5] == 'o' or m2[3][4] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[3][5] == 'o' or m2[3][4] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 1
+                
+        if m2[punchb][punch] == '*':
+            print('ПРОМАЗАЛ!')
+            hod = 0
+      
+    if hod == 2:
+        print('ХОД ИГРОКА')
+        for i in range(len(m2)):
+            for j in range(len(m2[i])):
+                print(m2[i][j], end=' ')
+            print()
+        punchb = int(input('Какая точка(ряд)?'))
+        punch = int(input('Какая точка(столбик)?'))
+        punch-=1
+        punchb-=1
+        if m[punchb][punch] == 'o':
+            if punchb == 0 and punch == 0:
+                if m[0][1] == 'o' or m[0][2] == 'o' or m[0][3] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[0][1] == 'x' and m[0][2] == 'x' and m[0][3] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+            if punchb == 0 and punch == 1:
+                if m[0][0] == 'o' or m[0][2] == 'o' or m[0][3] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[0][0] == 'x' and m[0][2] == 'x' and m[0][3] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+            if punchb == 0 and punch == 2:
+                if m[0][0] == 'o' or m[0][1] == 'o' or m[0][3] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[0][0] == 'x' and m[0][1] == 'x' and m[0][3] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+            if punchb == 0 and punch == 3:
+                if m[0][0] == 'o' or m[0][2] == 'o' or m[0][1] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[0][0] == 'x' and m[0][2] == 'x' and m[0][1] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+            if punchb == 1 and punch == 7:
+                if m[2][7] == 'o' or m[3][7] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[2][7] == 'x' and m[3][7] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+            if punchb == 2 and punch == 7:
+                if m[1][7] == 'o' or m[3][7] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[1][7] == 'x' and m[3][7] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+            if punchb == 3 and punch == 7:
+                if m[2][7] == 'o' or m[1][7] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[2][7] == 'x' and m[1][7] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+            if punchb == 3 and punch == 2:
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                    hod = 2
+            if punchb == 5 and punch == 5:
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                    hod = 2
+            
+            if punchb == 5 and punch == 8:
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                    hod = 2
+            
+            if punchb == 9 and punch == 0:
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                    hod = 2
+                    
+            if punchb == 8 and punch == 6:
+                if m[8][7] == 'o' or m[8][8] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[8][7] == 'x' and m[8][8] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+                    
+            if punchb == 8 and punch == 7:
+                if m[8][6] == 'o' or m[8][8] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[8][6] == 'x' and m[8][8] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+                    
+            if punchb == 8 and punch == 8:
+                if m[8][7] == 'o' or m[8][6] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[8][7] == 'x' and m[8][6] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+                    
+            if punchb == 0 and punch == 9:
+                if m[1][9] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[1][9] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+                
+            if punchb == 1 and punch == 9:
+                if m[0][9] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[0][9] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+                    
+            if punchb == 5 and punch == 0:
+                if m[6][0] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[6][0] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+                    
+            if punchb == 6 and punch == 0:
+                if m[5][0] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[5][0] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+                    
+            if punchb == 7 and punch == 3:
+                if m[7][4] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[7][4] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+               
+            if punchb == 7 and punch == 4:
+                if m[7][3] == 'o':
+                    print('ПОПАЛ!')
+                    m[punchb][punch] = 'x'
+                elif m[7][3] == 'x':
+                    print('УБИТ!')
+                    m[punchb][punch] = 'x'
+                hod = 2
+                
+        if m[punchb][punch] == '*':
+            print('ПРОМАЗАЛ!')
+            hod = 3
+        
+    if hod == 3:
+        print('ХОД БОТА')
+        for i in range(len(m)):
+            for j in range(len(m[i])):
+                print(m[i][j], end=' ')
+            print()
+        punchb = random.randrange(10)
+        punch = random.randrange(10)
+        if m2[punchb][punch] == 'o':
+            if punchb == 0 and punch == 0:
+                if m2[0][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[0][1] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+            if punchb == 0 and punch == 1:
+                if m2[0][0] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[0][0] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+            if punchb == 1 and punch == 3:
+                print('УБИТ!')
+                m2[punchb][punch] = 'x'
+                hod = 3
+            if punchb == 0 and punch == 3:
+                print('УБИТ!')
+                m2[punchb][punch] = 'x'
+                hod = 3
+            if punchb == 4 and punch == 8:
+                print('УБИТ!')
+                m2[punchb][punch] = 'x'
+                hod = 3
+            if punchb == 8 and punch == 6:
+                print('УБИТ!')
+                m2[punchb][punch] = 'x'
+                hod = 3
+            if punchb == 1 and punch == 7:
+                if m2[1][8] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[1][8] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                                
+            if punchb == 1 and punch == 8:
+                if m2[1][7] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[1][8] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                    
+            if punchb == 6 and punch == 3:
+                if m2[7][3] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[7][3] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                    
+            if punchb == 7 and punch3 == 3:
+                if m2[6][3] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[6][3] == 'x':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                    
+            if punchb == 4 and punch == 1:
+                if m2[5][1] == 'o' or m2[6][1] == 'o' or m2[7][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[5][1] == 'o' or m2[6][1] == 'o' or m2[7][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                
+            if punchb == 5 and punch == 1:
+                if m2[4][1] == 'o' or m2[6][1] == 'o' or m2[7][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[4][1] == 'o' or m2[6][1] == 'o' or m2[7][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                    
+            if punchb == 6 and punch == 1:
+                if m2[5][1] == 'o' or m2[4][1] == 'o' or m2[7][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[5][1] == 'o' or m2[4][1] == 'o' or m2[7][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                    
+            if punchb == 7 and punch == 1:
+                if m2[5][1] == 'o' or m2[6][1] == 'o' or m2[4][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[5][1] == 'o' or m2[6][1] == 'o' or m2[4][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                    
+            if punchb == 9 and punch == 2:
+                if m2[9][3] == 'o' or m2[9][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[9][3] == 'o' or m2[9][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                    
+            if punchb == 9 and punch == 3:
+                if m2[9][2] == 'o' or m2[9][1] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[9][2] == 'o' or m2[9][1] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                
+            if punchb == 9 and punch == 1:
+                if m2[9][3] == 'o' or m2[9][2] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[9][3] == 'o' or m2[9][2] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                
+            if punchb == 3 and punch == 4:
+                if m2[3][5] == 'o' or m2[3][6] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[3][5] == 'o' or m2[3][6] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                
+            if punchb == 3 and punch == 5:
+                if m2[3][4] == 'o' or m2[3][6] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[3][4] == 'o' or m2[3][6] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                
+            if punchb == 3 and punch == 6:
+                if m2[3][5] == 'o' or m2[3][4] == 'o':
+                    print('ПОПАЛ!')
+                    m2[punchb][punch] = 'x'
+                elif m2[3][5] == 'o' or m2[3][4] == 'o':
+                    print('УБИТ!')
+                    m2[punchb][punch] = 'x'
+                hod = 3
+                
+        if m2[punchb][punch] == '*':
+            print('ПРОМАЗАЛ!')
+            hod = 2
+    
