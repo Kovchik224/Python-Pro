@@ -1,0 +1,25 @@
+import keyboard
+import random
+import time
+
+polepag = [['-','-','-','-','-'],
+           ['-','-','-','-','-'],
+           ['-','-','-','-','-'],
+           ['-','-','-','-','-'],
+           ['-','-','v','-','-']]
+
+ender = 0
+restart = 0
+score = 0
+fobj = 0
+plp = 3
+
+while ender = 0:
+    print('SCORE', score)
+    for i in range(len(m2)):
+        for j in range(len(m2[i])):
+            print(m2[i][j], end=' ')
+        print()
+    fobj = random.randrange(6)
+    tfobj = random.randrange(2)
+    
