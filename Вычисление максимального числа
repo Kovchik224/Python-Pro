@@ -1,0 +1,11 @@
+def maximalnoe(a,b,c):
+    maxc = a
+    if maxc < b:
+        maxc = b
+    if maxc < c:
+        maxc = c
+    return(maxc)
+aa = int(input())
+bb = int(input())
+cc = int(input())
+print(maximalnoe(aa,bb,cc))
