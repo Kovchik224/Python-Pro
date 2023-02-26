@@ -1,0 +1,21 @@
+stak = 0
+def c(a,b):
+    umno = 1
+    global stak
+    if b < a:
+        stak = a
+        a = b
+        b = stak
+    umnozhi = a
+    while True:
+        if umnozhi > b:
+            return(umno)
+        else:
+            umno*=umnozhi
+        umnozhi+=1
+        
+
+aa = int(input())
+bb = int(input())
+print(c(aa,bb))
+    
