@@ -1,0 +1,51 @@
+import random
+import time
+import keyboard
+
+game = [['-','-','-','-','-','-','-','-'],
+        ['-','-','-','-','-','-','-','-'],
+        ['-','-','-','-','-','-','-','-'],
+        ['-','-','-','-','-','-','-','-'],
+        ['o','-','-','-','-','-','-','-']]
+
+score = 0
+restart = 0
+posy = 4
+jump = 0
+oldy = 0
+player = 1
+peremesh = 1
+while restart == 0:
+    for i in range(len(game)):
+        for j in range(len(game[i])):
+            print(game[i][j], end=' ')
+        print()
+    while player == 1:
+        if keyboard.is_pressed('space'):
+            jump = 1
+            player = 0
+    while jump != 0:
+        if jump == 1 or jump == 2 or jump == 3:
+            oldy = posy
+            posy-=1
+            jump+=1
+            game[oldy][0] = '-'
+        
+        if jump == 4 or jump == 5 or jump == 6:
+            oldy = posy
+            posy+=1
+            jump+=1
+            game[oldy][0] = '-'
+        
+        if posy == 4:
+            jump = 0
+            game[oldy][0] = '-'
+            
+        game[posy][0] = 'o'
+        time.sleep(1)
+        for i in range(len(game)):
+            for j in range(len(game[i])):
+                print(game[i][j], end=' ')
+            print()
+    player = 1
+    
