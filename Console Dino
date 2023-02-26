@@ -1,3 +1,5 @@
+#Сделать кактусы(расположение через рандом - растояние до игрока)
+
 import random
 import time
 import keyboard
