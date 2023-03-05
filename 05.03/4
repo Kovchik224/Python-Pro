@@ -1,0 +1,14 @@
+def a(c1,c2,p1):
+    if c1 > c2:
+        stakan = c1
+        c1 = c2
+        c2 = stakan
+    if c1 < p1 < c2:
+        otvet = 'да'
+    else:
+        otvet = 'нет'
+    return(otvet)
+z1 = int(input())
+z2 = int(input())
+b1 = int(input())
+print(a(z1,z2,b1))
