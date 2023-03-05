@@ -1,0 +1,8 @@
+def factoria(a):
+    factorial = 1
+    for i in range(a):
+        chislo = i + 1
+        factorial*=chislo
+    return factorial
+chiselko = int(input())
+print(factoria(chiselko))
