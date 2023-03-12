@@ -1,0 +1,17 @@
+def b(c):
+    used = -1
+    c1 = []
+    for i in (c):
+        p = 0
+        for j in (c):
+            if i == j:
+                p+=1
+        if p == 1:
+            c1.append(i)    
+    return(c1)
+a = []
+colvo = int(input())
+for l in range (colvo):   
+    ch = int(input())
+    a.append(ch)
+print(b(a))
