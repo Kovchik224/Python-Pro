@@ -1,0 +1,9 @@
+def square(a,b):
+    v = []
+    for i in range(a,b+1):
+        chislo = i * i
+        v.append(chislo)
+    return(v)
+a1 = int(input())
+b1 = int(input())
+print(square(a1,b1))
