@@ -1,0 +1,90 @@
+import time
+import pyautogui
+import keyboard
+def cave2 (p):
+    
+    return(p)
+posx = 3
+posy = 3
+it = '⚇'
+cavemap1 = [['🞖','🞖','🞖','🞖','🞖','🞖','🞖'],
+            ['🞖','⸬','⸬','⸬','⸬','⸬','🞖'],
+            ['🞖','⸬','⸬','⸬','⸬','⸬','🞖'],
+            ['🞖','⸬','⸬',it,'⸬','⸬','🞖'],
+            ['🞖','⸬','⸬','⸬','⸬','⸬','🞖'],
+            ['🞖','⸬','⸬','⸬','⸬','⸬','🞖'],
+            ['🞖','🞖','🞖','🚪','🞖','🞖','🞖']]
+cavemap2 = [['🞖','🞖','🞖','🚪','🞖','🞖','🞖'],
+            ['🞖','⸬','⸬','⸬','⸬','⸬','🞖'],
+            ['🞖','⸬','⸬','⸬','⸬','⸬','🞖'],
+            ['🞖','⸬','⸬','⸬','⸬','⸬','🚪'],
+            ['🞖','⸬','⸬','⸬','⸬','⸬','🞖'],
+            ['🞖','⸬','⸬','⸬','⸬','⸬','🞖'],
+            ['🞖','🞖','🞖','🚪','🞖','🞖','🞖']]
+p = cavemap1
+for i in range(len(p)):
+            for j in range(len(p[i])):
+                print(p[i][j], end=' ')
+            print()
+while True: 
+    if keyboard.is_pressed('s'):
+        if p[posy+1][posx] == '🞖':
+            print('тут стена...')
+        if p[posy+1][posx] == '⸬':
+            p[posy][posx] = '⸬'
+            posy+=1
+            p[posy][posx] = it
+        if p[posy+1][posx] == '🚪':
+            if p == cavemap1:
+                p = cavemap2
+                p[1][3] = it
+        for i in range(len(p)):
+            for j in range(len(p[i])):
+                print(p[i][j], end=' ')
+            print()
+        time.sleep(0.5)
+        
+    if keyboard.is_pressed('w'):
+        if p[posy-1][posx] == '🞖':
+            print('тут стена...')
+        if p[posy-1][posx] == '⸬':
+            p[posy][posx] = '⸬'
+            posy-=1
+            p[posy][posx] = it
+        for i in range(len(p)):
+            for j in range(len(p[i])):
+                print(p[i][j], end=' ')
+            print()
+        time.sleep(0.5)
+        
+    if keyboard.is_pressed('a'):
+        if p[posy][posx-1] == '🞖':
+            print('тут стена...')
+        if p[posy][posx-1] == '⸬':
+            p[posy][posx] = '⸬'
+            posx-=1
+            p[posy][posx] = it
+        for i in range(len(p)):
+            for j in range(len(p[i])):
+                print(p[i][j], end=' ')
+            print()
+        time.sleep(0.5)
+        
+    if keyboard.is_pressed('d'):
+        if p[posy][posx+1] == '🞖':
+            print('тут стена...')
+        if p[posy][posx+1] == '⸬':
+            p[posy][posx] = '⸬'
+            posx+=1
+            p[posy][posx] = it
+        if p[posy][posx+1] == '🚪':
+            if p == cavemap1:
+                p = cavemap2
+                p[1][3] = it
+            
+        for i in range(len(p)):
+            for j in range(len(p[i])):
+                print(p[i][j], end=' ')
+            print()
+        time.sleep(0.5)
+    
