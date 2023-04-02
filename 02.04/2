@@ -1,0 +1,20 @@
+ez = {'ФИО' : '', 'Математика' : 5, 'РЯ' : 4, 'Биология' : 3}
+fio = input('Введите ФИО: ')
+ez['ФИО'] = fio
+while True:
+    comblock = input('[Команда]: ')
+    if comblock == 'доб и зам':
+        index = input('Введите предмет: ')
+        mark = int(input('Введите оценку: '))
+        ez[index] = mark
+    if comblock == 'вывести':
+        sred = 0
+        print(ez)
+        for i in (ez.keys()):
+            if i != 'ФИО':
+                m = ez[i]
+                sred+=m
+        print(sred / (len(ez)-1))
+    if comblock == 'удалить':
+        index = input('Введите предмет: ')
+        ez.pop(index)
