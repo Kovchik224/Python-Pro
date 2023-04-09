@@ -1,0 +1,31 @@
+lider = 'nothing'
+lideri = 0
+top10 = {'ArtemMine74' : 100, 'VictOff' : 400, 'TOG' : 399, 'asdf' : 509, 'zxcv' : 123, 'wanderning' : 765, 'MaxOn' : 766, 'pwgood' : 800, 'yuo' : 284, 'jkl' : 223}
+while True:
+    a = input('введите функцию: ')
+    if a == 'вывести':
+        for i in (top10):
+            print(i, top10[i])
+    if a == 'редакт':
+        v = input('участник: ')
+        w = int(input('рекорд: '))
+        for i in (top10):
+            if v == i:
+                if w > top10[i]:
+                    top10[i] = w
+    if a == 'просмотреть':
+        d = input('участник: ')
+        print(top10[d])
+    if a == 'лидер':
+        l = 1
+        for j in (top10):
+            ja = top10[j]
+            if l == 1:
+                ia = top10[j]
+                lider = j
+                lideri = ia
+                l = 0
+            if lideri < ja:
+                lider = j
+                lideri = ja
+        print(lider, lideri)
