@@ -1,0 +1,18 @@
+while True:
+    a = input()
+    if a == 'register':
+        f = open('capybara.txt', 'w')
+        b = input('Введите Логин: ')
+        d = input('Введите Пароль: ')
+        c = f.write(b + ' ' + d)
+        f.close()
+    if a == 'login':
+        f = open('capybara.txt', 'r')
+        e = input('Введите Логин: ')
+        g = input('Введите Пароль: ')
+        h = e + ' ' + g
+        i = f.read()
+        if h == i:
+            print('Вы успешно вошли')
+        if h != i:
+            print('Неправильный логин или пароль')
