@@ -5,48 +5,120 @@ import time
 #        if play[]
 #🡨🡫🡩🡪
 #🡸🡻🡹🡺
+i = 1
+j = 1
+flag = 0
+what = 0
+score = 0
+scoreold = 0
+def reaction():
+    global score
+    global scoreold
+    if score>=scoreold:
+        if speed < 50:
+            return 'Идеально!'
+        if speed < 100 and speed > 50:
+            return 'Хорошо!'
+        if speed < 150 and speed > 100:
+            return 'Плохо!'
+        if speed < 200 and speed > 150:
+            return 'Ужасно!'
 
 play = [['🡨','🡫','🡩','🡪'],
-        ['🡸',' ',' ',' '],
-        [' ','🡻',' ',' '],
         [' ',' ','🡹',' '],
+        ['🡸',' ',' ',' '],
         [' ',' ',' ','🡺'],
         [' ',' ','🡹',' '],
         [' ','🡻',' ',' '],
-        ['🡸',' ',' ',' '],
-        [' ','🡻',' ',' '],
-        [' ','🡻',' ',' '],
-        [' ',' ','🡹',' '],
-        [' ',' ','🡹',' '],
         [' ',' ',' ','🡺'],
+        ['🡸',' ',' ',' '],
+        [' ',' ',' ',' '],
+        [' ','🡻',' ',' '],
+        [' ',' ',' ',' '],
         [' ',' ',' ','🡺'],
         [' ',' ',' ',' '],
-        ['⚐','⚐','⚐','⚐'],]
-
+        ['🡸',' ',' ',' '],
+        [' ',' ',' ',' '],
+        [' ',' ','🡹',' '],
+        [' ',' ',' ',' '],
+        [' ',' ',' ',' '],
+        [' ',' ',' ',' '],
+        [' ',' ',' ','🡺'],
+        [' ',' ',' ',' '],
+        [' ',' ',' ',' '],
+        [' ',' ',' ',' '],
+        [' ',' ',' ',' '],
+        [' ',' ',' ',' '],
+        [' ',' ',' ',' '],
+        ['⚐','⚐','⚐','⚐']]
+for i in range(6):
+    for j in range(len(play[i])):
+        print(play[i][j], end=' ')
+    print()
+time.sleep(0.5)
 while True:
+    speed = 0
+    print('score:', score)
+    for i in range (200):
+        speed+=1
+        if keyboard.is_pressed('d'):
+            if play[0][0] == '🡸':
+                score+=10
+                
+            if play[0][0] == '🡨':
+                score-=10
+            print(reaction())
+        if keyboard.is_pressed('f'):
+            if play[0][0] == '🡻':
+                score+=10
+            if play[0][0] == '🡫':
+                score-=10
+            print(reaction())
+        if keyboard.is_pressed('j'):
+            if play[0][0] == '🡹':
+                score+=10
+            if play[0][0] == '🡩':
+                score-=10
+            print(reaction())
+        if keyboard.is_pressed('k'):
+            if play[0][0] == '🡺':
+                score+=10
+            if play[0][0] == '🡪':
+                score-=10
+            print(reaction())
+        scoreold = score
+        time.sleep(0.01)
+        
+    what = 0
+    if play[0][0] == '🡸' or play[0][1] == '🡻' or play[0][2] == '🡹' or play[0][3] == '🡺':
+        play[0] = ['🡨','🡫','🡩','🡪']
+    for i in range(len(play)-1):
+        for j in range(0,4):
+            if what == 0:
+                if play[i][j] == '🡸' and play[i-1][j] == '🡨':
+                    play[i-1][j] = '🡸'
+                    play.pop(i)
+                    play.append([' ',' ',' ',' '])
+                    what = 1
+            if what == 0:
+                if play[i][j] == '🡻' and play[i-1][j] == '🡫':
+                    play[i-1][j] = '🡻'
+                    play.pop(i)
+                    play.append([' ',' ',' ',' '])
+                    what = 1
+            if what == 0:
+                if play[i][j] == '🡹' and play[i-1][j] == '🡩':
+                    play[i-1][j] = '🡹'
+                    play.pop(i)
+                    play.append([' ',' ',' ',' '])
+                    what = 1
+            if what == 0:
+                if play[i][j] == '🡺' and play[i-1][j] == '🡪':
+                    play[i-1][j] = '🡺'
+                    play.pop(i)
+                    play.append([' ',' ',' ',' '])
+                    what = 1
     for i in range(6):
         for j in range(len(play[i])):
             print(play[i][j], end=' ')
         print()
-    for i in range(0,len(play)-1):
-        for j in range(0,4):
-            if play[i][j] == '🡨' or '🡫' or '🡩' or '🡪':
-                play[i][j] = play[i+1][j]
-                if j == '0':
-                    play[i][1] = '🡫'
-                    play[i][2] = '🡩'
-                    play[i][3] = '🡪'
-                if j == '1':
-                    play[i][0] = '🡨'
-                    play[i][2] = '🡩'
-                    play[i][3] = '🡪'
-                if j == '2':
-                    play[i][1] = '🡫'
-                    play[i][0] = '🡨'
-                    play[i][3] = '🡪'
-                if j == '3':
-                    play[i][1] = '🡫'
-                    play[i][2] = '🡩'
-                    play[i][0] = '🡨'
-            play[i+1][j] = ' '
-    time.sleep(0.5)
