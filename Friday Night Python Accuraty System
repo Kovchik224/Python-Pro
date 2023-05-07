@@ -1,0 +1,16 @@
+#Идеально - 100
+#Хорошо - 80
+#Плохо - 60
+#Ужасно - 40
+#Промах - 20
+accurelease = 0
+accuracy = []
+a = int(input())
+for i in range(a):
+    g = int(input())
+    accuracy.append(g)
+
+for i in range(len(accuracy)):
+    accurelease += accuracy[i]
+accuresult = accurelease / len(accuracy)
+print(accuresult,'%')
