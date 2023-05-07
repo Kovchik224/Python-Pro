@@ -1,0 +1,58 @@
+#    МЕНЮ
+#-=-=-=-=-=-=-
+import keyboard
+import time
+track = 0
+oldtrack = 0
+chooseflag = 0
+menusave = ['TUTORIAL',
+            'DADBATTLE',
+            'SPOOKY',
+            'THORNS',
+            'BLUEBEAT']
+menu = ['TUTORIAL',
+        'DADBATTLE',
+        'SPOOKY',
+        'THORNS',
+        'BLUEBEAT']
+for i in (menu):
+    print(i)
+while True:
+    menuflag = 0
+    if keyboard.is_pressed('down') and menuflag == 0:
+        if track == len(menu)-1:
+            track = -1
+        if track != len(menu)-1:
+            track+=1
+        menuflag = 1
+        while keyboard.is_pressed('down'):
+            time.sleep(0.1)
+        menu[oldtrack] = menusave[oldtrack]
+        oldtrack = track
+        chooseflag = 0
+        
+    if keyboard.is_pressed('up') and menuflag == 0:
+        if track == 0:
+            track = len(menu)
+            time.sleep(0.1)
+        if track != 0:
+            track-=1
+            time.sleep(0.1)
+        menuflag = 1
+        while keyboard.is_pressed('up'):
+            time.sleep(0.1)
+        menu[oldtrack] = menusave[oldtrack]
+        oldtrack = track
+        chooseflag = 0
+        
+    if chooseflag == 0:
+        menu[track] = '>' + menu[track]
+        for i in (menu):
+            print(i)
+        chooseflag = 1
+    time.sleep(0.1)
+    
+    if keyboard.is_pressed('enter'):
+        print('Now playing:', menusave[track])
+        while keyboard.is_pressed('enter'):
+            time.sleep(0.1)
