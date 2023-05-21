@@ -1,0 +1,14 @@
+chastota = 0
+word = []
+f = open('pagfile.txt', 'r')
+r = f.read().split('\n')
+for i in range(len(r)):
+    r[i] = r[i].split(' ')
+for a in (r):
+    for b in(a):
+        chastota = 0
+        for i in (r):
+            for j in (i):
+                if b == j:
+                    chastota+=1
+        print(chastota, b)
