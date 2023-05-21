@@ -9,11 +9,9 @@ track = 0
 oldtrack = 0
 chooseflag = 0
 menusave = ['BATTLE',
-            'MEGALOVANIA',
-            'CUSTOM LEVEL']
+            'MEGALOVANIA']
 menu = ['BATTLE',
-        'MEGALOVANIA',
-        'CUSTOM LEVEL']
+        'MEGALOVANIA]
     
 i = 1
 j = 1
@@ -179,11 +177,7 @@ while True:
             if menusave[track] == 'MEGALOVANIA':
                 play = MEGALOVANIA
                 bpm = 80
-            if menusave[track == 'CUSTOM LEVEL']:
-                name = pyautogui.prompt('Введите название уровня', '1. НАЗВАНИЕ', 'custom level')
-                f = open(name + '.txt', 'w')
-                pyautogui.alert('Используйте жирные стрелки чтобы составлять уровень. Одна строка в тексте - один ряд в уровне. В конце уровня поставьте знак флажка', '2. КАК СДЕЛАТЬ?', 'OK')
-                f.write('🡸 🡻 🡹 🡺 ⚐\n🡨🡫🡩🡪')
+           
             game = 0
             chooseflag = 2
             time.sleep(1)
